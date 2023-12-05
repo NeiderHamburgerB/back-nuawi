@@ -5,7 +5,7 @@ export const TaskCreateDto = [
     check('description').isString(),
 ];
 
-export const UserUpdateDto = [
+export const TaskUpdateDto = [
     check('title').isString().optional({nullable: true}),
     check('description').isString().optional({nullable: true}),
     check('status').isString().optional({nullable: true}),

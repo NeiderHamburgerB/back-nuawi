@@ -1,5 +1,5 @@
 import { TaskController } from "./task.controller";
-import { TaskCreateDto } from "./task.dto";
+import { TaskCreateDto, TaskUpdateDto } from "./task.dto";
 import { Router } from "express";
 
 export class TaskRoutes {
@@ -19,7 +19,7 @@ export class TaskRoutes {
 
         this.router.get('/one/:id', this.controller.one);
 
-        this.router.patch('/update/:id', this.controller.update)
+        this.router.patch('/update/:id', [...TaskUpdateDto], this.controller.update)
 
         this.router.delete('/delete/:id', this.controller.delete)
     }
