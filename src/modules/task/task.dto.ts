@@ -1,0 +1,12 @@
+import { check } from "express-validator";
+
+export const TaskCreateDto = [
+    check('title').isString(),
+    check('description').isString(),
+];
+
+export const UserUpdateDto = [
+    check('title').isString().optional({nullable: true}),
+    check('description').isString().optional({nullable: true}),
+    check('status').isString().optional({nullable: true}),
+];
