@@ -19,13 +19,13 @@ export class TaskController {
       return res.status(400).send({ errValidation });
     }
 
-    const [error, user] = await to(this.taskService.create(req.body));
+    const [error, task] = await to(this.taskService.create(req.body));
 
     if (error) {
       return res.status(400).send({ error });
     }
 
-    return res.status(201).send({ user });
+    return res.status(201).send({ task });
   }
 
   all = async (req: Request, res: Response, next: any) => {
